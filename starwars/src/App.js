@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import CharacterList from "./components/CharacterList"
 import './App.css';
 
 class App extends Component {
@@ -8,6 +9,19 @@ class App extends Component {
       starwarsChars: []
     };
   }
+
+
+  addItem = item => {
+    // this takes an item string, copies the list on state, and adds in
+    // the newly created item object
+    this.setState({
+      starwarsChars: [
+        ...this.state.starwarsChars,
+        { name: item, purchased: false, id: Date.now() }
+      ]
+    });
+  };
+
 
   componentDidMount() {
     this.getCharacters('https://swapi.co/api/people/');
@@ -33,6 +47,7 @@ class App extends Component {
     return (
       <div className="App">
         <h1 className="Header">React Wars</h1>
+        <CharacterList starwarsChars={this.state.starwarsChars}/>
       </div>
     );
   }
