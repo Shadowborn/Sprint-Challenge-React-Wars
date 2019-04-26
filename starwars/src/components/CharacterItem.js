@@ -8,7 +8,15 @@ function CharacterItem(props) {
 
   return (
     <div className={classNames}>
-      <p>{props.item.name}</p>
+      <p>
+        <strong>Identity: </strong>{props.item.name}
+      </p>
+      <p>
+        <strong>Eye Color: </strong>{props.item.eye_color}
+      </p>
+      <p>
+      <strong>Gender: </strong>{props.item.gender} 
+      </p>
     </div>
   );
 }

@@ -11,16 +11,6 @@ class App extends Component {
   }
 
 
-  addItem = item => {
-    // this takes an item string, copies the list on state, and adds in
-    // the newly created item object
-    this.setState({
-      starwarsChars: [
-        ...this.state.starwarsChars,
-        { name: item, purchased: false, id: Date.now() }
-      ]
-    });
-  };
 
 
   componentDidMount() {

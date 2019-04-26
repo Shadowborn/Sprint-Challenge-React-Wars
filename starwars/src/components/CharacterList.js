@@ -5,7 +5,7 @@ function CharacterList(props) {
   return (
     <div className="character-list">
       {props.starwarsChars.map(item => (
-        <CharacterItem key={item.height} item={item} />
+        <CharacterItem key={item.created} item={item} />
       ))}
     </div>
   );
