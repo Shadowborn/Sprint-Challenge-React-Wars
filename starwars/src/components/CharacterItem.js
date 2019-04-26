@@ -15,6 +15,9 @@ function CharacterItem(props) {
       <p>
       <strong>Gender: </strong>{props.item.gender} 
       </p>
+      <p>
+      <strong>Planet: </strong>{props.item.homeworld} 
+      </p>
     </div>
   );
 }
