@@ -6,3 +6,23 @@
   text-shadow: 1px 1px 5px #fff;
 }
 /* write your parent styles in here for your App.js */
+
+
+.character-list {
+  display:flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  min-width: 400px;
+}
+.item {
+  width:25%;
+  background-color:rgba(59, 25, 6, 0.719);
+  border: 1px solid rgb(215, 218, 65);
+  margin:10px;
+}
+strong {
+  color: rgb(241, 152, 18);
+}
+.item p {
+  color:rgba(255, 255, 255, 0.945);
+}

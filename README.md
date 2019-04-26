@@ -26,11 +26,19 @@ Demonstrate your understanding of this Sprint's concepts by answering the follow
 
 - [ ] What is React JS and what problems does it try and solve? Support your answer with concepts introduced in class and from your personal research on the web.
 
+React JS is used to build UI through direct reaction to the DOM. It is an open source library used to handle many user interactions on one page and was created by facebook
+
 - [ ] What does it mean to _think_ in react?
+
+React enables us to think less about mutations due to the fact that react re-renders the UI instead of mutating it. Allowing us to deal with less issues related to mutations.
 
 - [ ] Describe state.
 
+State is an object that holds data that can change, each component can maintain its own state which lives in an object called this.state. 
+
 - [ ] Describe props.
+
+Props holds dynamic and reusable data. Props and state are crucial to reusability. Everything we want to use as dynamic data, we set on props.
 
 ## Project Set Up
 
