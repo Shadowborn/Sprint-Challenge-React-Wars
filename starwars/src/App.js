@@ -1,37 +1,42 @@
 import React, { Component } from 'react';
 import CharacterList from "./components/CharacterList"
-// import PlanetList from "./components/PlanetList"
+import PlanetList from "./components/PlanetList"
 import './App.css';
 
 class App extends Component {
   constructor() {
     super();
     this.state = {
-      starwarsChars: []
+      starwarsChars: [],
+      starwarsPlanets: [],
     };
   }
 
 
 
 
+  
+
+  planetComponentDidMount() {
+    this.getPlanets('https://swapi.co/api/planets/');
+  }
+  
+  getPlanets = URL => {
+    fetch(URL)
+      .then(res => {
+        return res.json();
+      })
+      .then(data => {
+        this.setState({ starwarsPlanets: data.results });
+      })
+      .catch(err => {
+        throw new Error(err);
+      });
+  };
+
   componentDidMount() {
     this.getCharacters('https://swapi.co/api/people/');
   }
-  // planetComponentDidMount() {
-  //   this.getPlanets('https://swapi.co/api/planets/');
-  // }
-  // getPlanets = URL => {
-  //   fetch(URL)
-  //     .then(res => {
-  //       return res.json();
-  //     })
-  //     .then(data => {
-  //       this.setState({ starwarsPlanets: data.results });
-  //     })
-  //     .catch(err => {
-  //       throw new Error(err);
-  //     });
-  // };
 
   getCharacters = URL => {
     // feel free to research what this code is doing.
@@ -55,10 +60,8 @@ class App extends Component {
         <h1 className="Header">React Wars</h1>
         <div>
         <CharacterList starwarsChars={this.state.starwarsChars}/>
-        </div>
-        {/* <div>
         <PlanetList starwarsPlanets={this.state.starwarsPlanets}/>
-        </div> */}
+        </div>
       </div>
     );
   }
